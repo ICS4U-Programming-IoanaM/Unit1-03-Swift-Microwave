@@ -63,7 +63,7 @@ do {
     // if statement calculating the time based on food
   } else if userFood == "pizza" {
     // time for 1 item to heat
-    baseTime = 0.74
+    baseTime = 0.75
     // if one item -> base time to heat
     if userAmount == 1 {
       totalTime = baseTime
@@ -100,7 +100,7 @@ do {
   }
 
   let minutes = Int(totalTime)
-  let seconds = Int((totalTime - Double(minutes)) * 60)
+  let seconds = Int(totalTime * 60 - (Double(minutes) * 60))
   print("It will take \(minutes) minute(s) and \(seconds) second(s).")
 
   // if user imputed invalid input
