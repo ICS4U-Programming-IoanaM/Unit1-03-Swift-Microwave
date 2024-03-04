@@ -27,7 +27,7 @@ func userInput() throws -> Float {
 }
 
 // function calculates the minutes and seconds
-func minutesSecondsCalculation(time: Double) throws->String {
+func minutesSecondsCalculation(time: Double) throws -> String {
   // calculations for minutes and seconds
   let minutes = Int(time)
   let seconds = Int(time * 60 - (Double(minutes) * 60))
