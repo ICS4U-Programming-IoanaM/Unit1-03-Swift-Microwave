@@ -26,6 +26,15 @@ func userInput() throws -> Float {
   return amount
 }
 
+// function calculates the minutes and seconds
+func minutesSecondsCalculation(time: Double) throws->String {
+  // calculations for minutes and seconds
+  let minutes = Int(time)
+  let seconds = Int(time * 60 - (Double(minutes) * 60))
+  // return display message
+  return "It will take \(minutes) minute(s) and \(seconds) second(s)."
+}
+
 do {
   // variable declaration
   var baseTime: Double = 0
@@ -47,14 +56,17 @@ do {
     // if one item -> base time to heat
     if userAmount == 1 {
       totalTime = baseTime
+      print(try minutesSecondsCalculation(time: totalTime))
 
       // if two items -> base time + 50% longer
     } else if userAmount == 2 {
       totalTime = baseTime * 1.5
+      print(try minutesSecondsCalculation(time: totalTime))
 
       // if three items -> base time + 100% longer
     } else if userAmount == 3 {
       totalTime = baseTime * 2
+      print(try minutesSecondsCalculation(time: totalTime))
     } else {
       totalTime = 1
       print("That is not a valid amount of food to put in the microwave!")
@@ -67,41 +79,47 @@ do {
     // if one item -> base time to heat
     if userAmount == 1 {
       totalTime = baseTime
+      print(try minutesSecondsCalculation(time: totalTime))
 
       // if two items -> base time + 50% longer
     } else if userAmount == 2 {
       totalTime = baseTime * 1.5
+      print(try minutesSecondsCalculation(time: totalTime))
 
       // if three items -> base time + 100% longer
     } else if userAmount == 3 {
       totalTime = baseTime * 2
+      print(try minutesSecondsCalculation(time: totalTime))
+
     } else {
       print("That is not a valid amount of food to put in the microwave!")
     }
 
-      // if statement calculating the time based on food
+  // if statement calculating the time based on food
   } else if userFood == "soup" {
     // time for 1 item to heat
     baseTime = 1
     // if one item -> base time to heat
     if userAmount == 1 {
       totalTime = baseTime
+      print(try minutesSecondsCalculation(time: totalTime))
 
       // if two items -> base time + 50% longer
     } else if userAmount == 2 {
       totalTime = baseTime * 1.5
+      print(try minutesSecondsCalculation(time: totalTime))
 
       // if three items -> base time + 100% longer
     } else if userAmount == 3 {
       totalTime = baseTime * 2
+      print(try minutesSecondsCalculation(time: totalTime))
+
     } else {
       print("That is not a valid amount of food to put in the microwave!")
     }
+  } else {
+    print("Please enter either sub, pizza, or soup. No other input is valid.")
   }
-
-  let minutes = Int(totalTime)
-  let seconds = Int(totalTime * 60 - (Double(minutes) * 60))
-  print("It will take \(minutes) minute(s) and \(seconds) second(s).")
 
   // if user imputed invalid input
 } catch InputError.invalidInput {
